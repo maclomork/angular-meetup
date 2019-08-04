@@ -1,46 +1,35 @@
 <div class="container">
+
   <div class="row">
     <div class="col-12">
       <h1>Buttons Clicked State</h1>
     </div>
     <div class="col-6">
-      <div class="row">
-        <div class="col-6">
-          <p>Left Button</p>
-        </div>
-        <div class="col-6">
-          <p>clicked: {{leftButtonClicked}}</p>
-        </div>
-      </div>
+      <p id="left-btn-clicks">Left Button clicked: {{leftButtonClicked}}</p>
     </div>
-
     <div class="col-6">
-      <div class="row">
-        <div class="col-6">
-          <p>Right Button</p>
-        </div>
-        <div class="col-6">
-          <p>clicked: {{rightButtonClicked}}</p>
-        </div>
-      </div>
+      <p id="right-btn-clicks">Right Button clicked: {{rightButtonClicked}}</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-12">
-      <h1>Form Control State</h1>
+      <h1>Input Form State</h1>
     </div>
     <div class="col-12">
-      <p>FormControl valid: [{{formControlValid}}]</p>
+      <p id="form-ctrl-valid">FormControl valid: {{formControlValid}}</p>
     </div>
     <div class="col-12">
-      <p>FormControl value: [{{formControlValue}}]</p>
+      <p id="form-ctrl-value">FormControl value: {{formControlValue}}</p>
     </div>
-
   </div>
+
   <div class="row">
     <div class="col-12">
-      <p>Checkbox Value: >{{checkBoxValue}}</p>
+      <h1>Checkbox State</h1>
+    </div>
+    <div class="col-12">
+      <p id="checkbox-value">Checkbox Value: {{checkBoxValue}}</p>
     </div>
   </div>
 

@@ -17,8 +17,7 @@ export class CheckboxesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stateService.checkBoxValue.next(this.checkBoxFormControl.value);
-    this.checkBoxFormControl.valueChanges.subscribe(newCheckboxVal => this.stateService.checkBoxValue.next(newCheckboxVal));
+    this.checkBoxFormControl.valueChanges.subscribe(newCheckboxVal => this.stateService.checkBoxValueSubject.next(newCheckboxVal));
   }
 
 }

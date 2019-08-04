@@ -12,13 +12,13 @@ export class StateService {
   formControlValidSubject: BehaviorSubject<boolean>;
   formControlValueSubject: BehaviorSubject<string>;
 
-  checkBoxValue: BehaviorSubject<boolean>;
+  checkBoxValueSubject: BehaviorSubject<boolean>;
 
   constructor() {
     this.leftButtonClicksSubject = new BehaviorSubject<number>(0);
     this.rightButtonClicksSubject = new BehaviorSubject<number>(0);
     this.formControlValidSubject = new BehaviorSubject<boolean>(false);
     this.formControlValueSubject = new BehaviorSubject<string>('');
-    this.checkBoxValue = new BehaviorSubject<boolean>(false);
+    this.checkBoxValueSubject = new BehaviorSubject<boolean>(false);
   }
 }

@@ -31,7 +31,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('HomeComponent can be created', () => {
     expect(component).toBeTruthy();
   });
 });
