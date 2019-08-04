@@ -17,6 +17,11 @@ export class StateComponent implements OnInit {
   checkBoxValue: boolean;
 
   constructor(private stateService: StateService) {
+    this.leftButtonClicked = 0;
+    this.rightButtonClicked = 0;
+    this.formControlValid = false;
+    this.formControlValue = '';
+    this.checkBoxValue = false;
   }
 
   ngOnInit() {

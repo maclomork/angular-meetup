@@ -13,12 +13,11 @@ export class CheckboxesComponent implements OnInit {
 
   constructor(private stateService: StateService,
               private fb: FormBuilder) {
+    this.checkBoxFormControl = this.fb.control(false);
   }
 
   ngOnInit() {
-    this.checkBoxFormControl = this.fb.control(false);
     this.stateService.checkBoxValue.next(this.checkBoxFormControl.value);
-
     this.checkBoxFormControl.valueChanges.subscribe(newCheckboxVal => this.stateService.checkBoxValue.next(newCheckboxVal));
   }
 

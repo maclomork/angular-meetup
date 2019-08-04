@@ -12,12 +12,11 @@ export class ButtonsComponent implements OnInit {
   rightButtonClickedAmount: number;
 
   constructor(private stateService: StateService) {
+    this.leftButtonClickedAmount = 0;
+    this.rightButtonClickedAmount = 0;
   }
 
   ngOnInit() {
-    this.leftButtonClickedAmount = 0;
-    this.rightButtonClickedAmount = 0;
-
     this.stateService.leftButtonClicksSubject.next(this.leftButtonClickedAmount);
     this.stateService.rightButtonClicksSubject.next(this.rightButtonClickedAmount);
   }

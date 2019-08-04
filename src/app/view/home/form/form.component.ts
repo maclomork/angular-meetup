@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {StateService} from '../../../shared/state.service';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -13,10 +13,14 @@ export class FormComponent implements OnInit {
 
   constructor(private stateService: StateService,
               private fb: FormBuilder) {
+    this.inputFormControl =
+      this.fb.control('', [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.maxLength(10)]);
   }
 
   ngOnInit() {
-    this.inputFormControl = this.fb.control('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
     this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
     this.stateService.formControlValueSubject.next(this.inputFormControl.value);
 
