@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { StateService } from '../../../shared/state.service';
+import {Component, OnInit} from '@angular/core';
+import {StateService} from '../../../shared/state.service';
 
 @Component({
   selector: 'app-state',
@@ -14,6 +14,8 @@ export class StateComponent implements OnInit {
   formControlValid: boolean;
   formControlValue: string;
 
+  checkBoxValue: boolean;
+
   constructor(private stateService: StateService) {
   }
 
@@ -23,6 +25,8 @@ export class StateComponent implements OnInit {
 
     this.stateService.formControlValidSubject.subscribe(formCtrlValid => this.formControlValid = formCtrlValid);
     this.stateService.formControlValueSubject.subscribe(formCtrlValue => this.formControlValue = formCtrlValue);
+
+    this.stateService.checkBoxValue.subscribe(checkBoxValue => this.checkBoxValue = checkBoxValue);
   }
 
 }

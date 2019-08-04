@@ -1,22 +1,24 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {FormComponent} from './form.component';
+import {CheckboxesComponent} from './checkboxes.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {StateService} from '../../../shared/state.service';
 
-describe('FormComponent', () => {
-  let component: FormComponent;
-  let fixture: ComponentFixture<FormComponent>;
+describe('CheckboxesComponent', () => {
+  let component: CheckboxesComponent;
+  let fixture: ComponentFixture<CheckboxesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [FormComponent]
+      declarations: [CheckboxesComponent],
+      providers: [StateService]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormComponent);
+    fixture = TestBed.createComponent(CheckboxesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

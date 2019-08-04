@@ -1,10 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { FormComponent } from './form/form.component';
-import { StateComponent } from './state/state.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import {HomeComponent} from './home.component';
+import {ButtonsComponent} from './buttons/buttons.component';
+import {FormComponent} from './form/form.component';
+import {StateComponent} from './state/state.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {CheckboxesComponent} from './checkboxes/checkboxes.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -17,6 +18,7 @@ describe('HomeComponent', () => {
         HomeComponent,
         ButtonsComponent,
         FormComponent,
+        CheckboxesComponent,
         StateComponent
       ]
     })
