@@ -95,4 +95,15 @@ describe('StateComponent', () => {
     expect(component.checkBoxValue).toBe(true);
     expect(checkBoxValueElement.textContent).toEqual('Checkbox Value: true');
   });
+
+  test('Iterating the subjects results in correct values displayed', () => {
+    stateServiceMock.leftButtonClicksSubject.next(4);
+    stateServiceMock.rightButtonClicksSubject.next(12);
+    stateServiceMock.formControlValueSubject.next('some text');
+    stateServiceMock.formControlValidSubject.next(true);
+    stateServiceMock.checkBoxValueSubject.next(true);
+
+    fixture.detectChanges();
+    expect(fixture).toMatchSnapshot();
+  });
 });
