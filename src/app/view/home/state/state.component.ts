@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {StateService} from '../../../shared/state.service';
 
 @Component({
   selector: 'app-state',
@@ -16,7 +15,7 @@ export class StateComponent implements OnInit {
 
   checkBoxValue: boolean;
 
-  constructor(private stateService: StateService) {
+  constructor() {
     this.leftButtonClicked = 0;
     this.rightButtonClicked = 0;
     this.formControlValid = false;
@@ -25,13 +24,13 @@ export class StateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stateService.leftButtonClicksSubject.subscribe(leftBtnClicked => this.leftButtonClicked = leftBtnClicked);
-    this.stateService.rightButtonClicksSubject.subscribe(rightBtnClicked => this.rightButtonClicked = rightBtnClicked);
+    // this.stateService.leftButtonClicksSubject.subscribe(leftBtnClicked => this.leftButtonClicked = leftBtnClicked);
+    // this.stateService.rightButtonClicksSubject.subscribe(rightBtnClicked => this.rightButtonClicked = rightBtnClicked);
 
-    this.stateService.formControlValidSubject.subscribe(formCtrlValid => this.formControlValid = formCtrlValid);
-    this.stateService.formControlValueSubject.subscribe(formCtrlValue => this.formControlValue = formCtrlValue);
+    // this.stateService.formControlValidSubject.subscribe(formCtrlValid => this.formControlValid = formCtrlValid);
+    // this.stateService.formControlValueSubject.subscribe(formCtrlValue => this.formControlValue = formCtrlValue);
 
-    this.stateService.checkBoxValueSubject.subscribe(checkBoxValue => this.checkBoxValue = checkBoxValue);
+    // this.stateService.checkBoxValueSubject.subscribe(checkBoxValue => this.checkBoxValue = checkBoxValue);
   }
 
 }

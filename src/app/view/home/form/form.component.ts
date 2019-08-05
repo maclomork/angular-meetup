@@ -1,5 +1,4 @@
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {StateService} from '../../../shared/state.service';
 import {Component, OnInit} from '@angular/core';
 
 @Component({
@@ -11,8 +10,7 @@ export class FormComponent implements OnInit {
 
   inputFormControl: FormControl;
 
-  constructor(private stateService: StateService,
-              private fb: FormBuilder) {
+  constructor(private fb: FormBuilder) {
     this.inputFormControl =
       this.fb.control('', [
         Validators.required,
@@ -21,12 +19,12 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
-    this.stateService.formControlValueSubject.next(this.inputFormControl.value);
+    // this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
+    // this.stateService.formControlValueSubject.next(this.inputFormControl.value);
 
     this.inputFormControl.valueChanges.subscribe(newValue => {
-      this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
-      this.stateService.formControlValueSubject.next(newValue);
+      // this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
+      // this.stateService.formControlValueSubject.next(newValue);
     });
   }
 }
