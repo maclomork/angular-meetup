@@ -25,6 +25,8 @@ export class FormComponent implements OnInit {
     this.stateService.formControlValueSubject.next(this.inputFormControl.value);
 
     this.inputFormControl.valueChanges.subscribe(newValue => {
+      console.log(`[FormComponent] updating formControlValidSubject with value ${this.inputFormControl.valid}`);
+      console.log(`[FormComponent] updating formControlValueSubject with value ${newValue}`);
       this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
       this.stateService.formControlValueSubject.next(newValue);
     });

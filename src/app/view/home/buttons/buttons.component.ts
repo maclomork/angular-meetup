@@ -24,10 +24,12 @@ export class ButtonsComponent implements OnInit {
   clickButton(identifier: string) {
     if (identifier === 'left') {
       this.leftButtonClickedAmount += 1;
+      console.log(`[ButtonsComponent] updating leftButtonClicksSubject with value ${this.leftButtonClickedAmount}`);
       this.stateService.leftButtonClicksSubject.next(this.leftButtonClickedAmount);
 
     } else if (identifier === 'right') {
       this.rightButtonClickedAmount += 1;
+      console.log(`[ButtonsComponent] updating rightButtonClicksSubject with value ${this.rightButtonClickedAmount}`);
       this.stateService.rightButtonClicksSubject.next(this.rightButtonClickedAmount);
     }
   }
