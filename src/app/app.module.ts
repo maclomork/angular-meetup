@@ -11,11 +11,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {CheckboxesComponent} from './view/home/checkboxes/checkboxes.component';
 import {StoreModule} from '@ngrx/store';
 
-import * as fromButtons from './view/home/buttons/buttons.reducer';
-import * as fromCheckboxes from './view/home//checkboxes/checkboxes.reducer';
-import * as fromForm from './view/home/form/form.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
+
+import * as fromButtons from './view/home/buttons/ngrx/buttons.reducer';
+import * as fromCheckboxes from './view/home/checkboxes/ngrx/checkboxes.reducer';
+import * as fromForm from './view/home/form/ngrx/form.reducer';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import {environment} from '../environments/environment';
       form: fromForm.reducer
     }),
     StoreDevtoolsModule.instrument({
-      maxAge: 25,
+      maxAge: 100,
       logOnly: environment.production
     })
   ],

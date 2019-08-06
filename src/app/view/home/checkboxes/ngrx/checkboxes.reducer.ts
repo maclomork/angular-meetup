@@ -1,16 +1,9 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as CheckboxesCompActions from './checkboxes.actions';
-
-export interface State {
-  checkboxValue: boolean;
-}
-
-export const initialState: State = {
-  checkboxValue: false
-};
+import {CheckBoxesState, initialCheckboxesState} from './checkboxes.state';
 
 const checkboxesReducer = createReducer(
-  initialState,
+  initialCheckboxesState,
 
   on(CheckboxesCompActions.checkBoxValueChange, (state, action) => ({
     ...state,
@@ -18,6 +11,6 @@ const checkboxesReducer = createReducer(
   }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: CheckBoxesState | undefined, action: Action) {
   return checkboxesReducer(state, action);
 }

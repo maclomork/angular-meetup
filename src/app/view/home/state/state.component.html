@@ -5,10 +5,10 @@
       <h1>Buttons Clicked State</h1>
     </div>
     <div class="col-6">
-      <p id="left-btn-clicks">Left Button clicked: {{leftButtonClicked}}</p>
+      <p id="left-btn-clicks">Left Button clicked: {{leftButtonClicked$ | async}}</p>
     </div>
     <div class="col-6">
-      <p id="right-btn-clicks">Right Button clicked: {{rightButtonClicked}}</p>
+      <p id="right-btn-clicks">Right Button clicked: {{rightButtonClicked$ | async}}</p>
     </div>
   </div>
 
@@ -17,10 +17,10 @@
       <h1>Input Form State</h1>
     </div>
     <div class="col-12">
-      <p id="form-ctrl-valid">FormControl valid: {{formControlValid}}</p>
+      <p id="form-ctrl-valid">FormControl valid: {{formControlValid$ | async}}</p>
     </div>
     <div class="col-12">
-      <p id="form-ctrl-value">FormControl value: {{formControlValue}}</p>
+      <p id="form-ctrl-value">FormControl value: {{formControlValue$ | async}}</p>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
       <h1>Checkbox State</h1>
     </div>
     <div class="col-12">
-      <p id="checkbox-value">Checkbox Value: {{checkBoxValue}}</p>
+      <p id="checkbox-value">Checkbox Value: {{checkBoxValue$ | async}}</p>
     </div>
   </div>
 

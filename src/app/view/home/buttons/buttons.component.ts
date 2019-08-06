@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {ButtonState} from './ngrx/buttons.state';
+import {Store} from '@ngrx/store';
+import {leftButtonClicked, rightButtonClicked} from './ngrx/buttons.actions';
 
 @Component({
   selector: 'app-buttons',
@@ -10,24 +13,22 @@ export class ButtonsComponent implements OnInit {
   leftButtonClickedAmount: number;
   rightButtonClickedAmount: number;
 
-  constructor() {
+  constructor(private store: Store<ButtonState>) {
     this.leftButtonClickedAmount = 0;
     this.rightButtonClickedAmount = 0;
   }
 
   ngOnInit() {
-    // this.stateService.leftButtonClicksSubject.next(this.leftButtonClickedAmount);
-    // this.stateService.rightButtonClicksSubject.next(this.rightButtonClickedAmount);
   }
 
   clickButton(identifier: string) {
     if (identifier === 'left') {
       this.leftButtonClickedAmount += 1;
-      // this.stateService.leftButtonClicksSubject.next(this.leftButtonClickedAmount);
+      this.store.dispatch(leftButtonClicked());
 
     } else if (identifier === 'right') {
       this.rightButtonClickedAmount += 1;
-      // this.stateService.rightButtonClicksSubject.next(this.rightButtonClickedAmount);
+      this.store.dispatch(rightButtonClicked());
     }
   }
 }

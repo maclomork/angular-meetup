@@ -1,5 +1,10 @@
 import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {Component, OnInit} from '@angular/core';
+import {FormState} from './ngrx/form.state';
+import {Store} from '@ngrx/store';
+import {inputFormValidUpdate, inputFormValueUpdate} from './ngrx/form.actions';
+import {timer} from 'rxjs';
+import {debounce} from 'rxjs/operators';
 
 @Component({
   selector: 'app-form',
@@ -10,21 +15,29 @@ export class FormComponent implements OnInit {
 
   inputFormControl: FormControl;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private store: Store<FormState>,
+              private fb: FormBuilder) {
+
     this.inputFormControl =
       this.fb.control('', [
         Validators.required,
         Validators.minLength(5),
-        Validators.maxLength(10)]);
+        Validators.maxLength(10)
+      ]);
   }
 
   ngOnInit() {
-    // this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
-    // this.stateService.formControlValueSubject.next(this.inputFormControl.value);
+    this.inputFormControl.valueChanges
+      .pipe(debounce(() => timer(250)))
+      .subscribe(newValue => {
+        this.store.dispatch(inputFormValueUpdate({formValue: newValue}))
+      });
 
-    this.inputFormControl.valueChanges.subscribe(newValue => {
-      // this.stateService.formControlValidSubject.next(this.inputFormControl.valid);
-      // this.stateService.formControlValueSubject.next(newValue);
-    });
+    this.inputFormControl.statusChanges
+      .pipe(debounce(() => timer(250)))
+      .subscribe(newStatus => {
+        console.log(newStatus);
+        this.store.dispatch(inputFormValidUpdate({formValid: newStatus === 'VALID'}))
+      });
   }
 }

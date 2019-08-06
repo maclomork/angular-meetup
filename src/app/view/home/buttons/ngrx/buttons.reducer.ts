@@ -1,18 +1,9 @@
 import {Action, createReducer, on} from '@ngrx/store';
 import * as ButtonsCompActions from './buttons.actions';
-
-export interface ButtonState {
-  leftButtonClickedAmount: number;
-  rightButtonClickedAmount: number;
-}
-
-export const initialState: ButtonState = {
-  leftButtonClickedAmount: 0,
-  rightButtonClickedAmount: 0
-};
+import {ButtonState, initialButtonState} from './buttons.state';
 
 const buttonsReducer = createReducer(
-  initialState,
+  initialButtonState,
 
   on(ButtonsCompActions.leftButtonClicked, state => ({
     ...state,

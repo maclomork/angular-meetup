@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl} from '@angular/forms';
+import {CheckBoxesState} from './ngrx/checkboxes.state';
+import {Store} from '@ngrx/store';
+import {checkBoxValueChange} from './ngrx/checkboxes.actions';
 
 @Component({
   selector: 'app-checkboxes',
@@ -10,13 +13,14 @@ export class CheckboxesComponent implements OnInit {
 
   checkBoxFormControl: FormControl;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private store: Store<CheckBoxesState>,
+              private fb: FormBuilder) {
     this.checkBoxFormControl = this.fb.control(false);
   }
 
   ngOnInit() {
     this.checkBoxFormControl.valueChanges.subscribe(
-      // newCheckboxVal => this.stateService.checkBoxValueSubject.next(newCheckboxVal)
+      newCheckBoxValue => this.store.dispatch(checkBoxValueChange({newValue: newCheckBoxValue}))
     );
   }
 
