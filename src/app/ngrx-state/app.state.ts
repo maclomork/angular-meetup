@@ -5,5 +5,5 @@ import {CheckBoxesState} from '../view/home/checkboxes/ngrx/checkboxes.state';
 export interface AppState {
   buttons: ButtonState;
   form: FormState;
-  checkboxes: CheckBoxesState
+  checkboxes: CheckBoxesState;
 }

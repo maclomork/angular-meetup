@@ -30,14 +30,14 @@ export class FormComponent implements OnInit {
     this.inputFormControl.valueChanges
       .pipe(debounce(() => timer(250)))
       .subscribe(newValue => {
-        this.store.dispatch(inputFormValueUpdate({formValue: newValue}))
+        this.store.dispatch(inputFormValueUpdate({formValue: newValue}));
       });
 
     this.inputFormControl.statusChanges
       .pipe(debounce(() => timer(250)))
       .subscribe(newStatus => {
         console.log(newStatus);
-        this.store.dispatch(inputFormValidUpdate({formValid: newStatus === 'VALID'}))
+        this.store.dispatch(inputFormValidUpdate({formValid: newStatus === 'VALID'}));
       });
   }
 }

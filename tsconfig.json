@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
     "strict": true,
     "strictNullChecks": true,
     "baseUrl": "./",
