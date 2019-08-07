@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StateComponent Iterating the subjects results in correct values displayed 1`] = `
+<app-state
+  checkBoxValue={[Function Boolean]}
+  formControlValid={[Function Boolean]}
+  formControlValue={[Function String]}
+  leftButtonClicked={[Function Number]}
+  rightButtonClicked={[Function Number]}
+  stateService={[Function StateServiceMock]}
+>
+  <div
+    class="container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <h1>
+          Buttons Clicked State
+        </h1>
+      </div>
+      <div
+        class="col-6"
+      >
+        <p
+          id="left-btn-clicks"
+        >
+          Left Button clicked: 4
+        </p>
+      </div>
+      <div
+        class="col-6"
+      >
+        <p
+          id="right-btn-clicks"
+        >
+          Right Button clicked: 12
+        </p>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <h1>
+          Input Form State
+        </h1>
+      </div>
+      <div
+        class="col-12"
+      >
+        <p
+          id="form-ctrl-valid"
+        >
+          FormControl valid: true
+        </p>
+      </div>
+      <div
+        class="col-12"
+      >
+        <p
+          id="form-ctrl-value"
+        >
+          FormControl value: some text
+        </p>
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col-12"
+      >
+        <h1>
+          Checkbox State
+        </h1>
+      </div>
+      <div
+        class="col-12"
+      >
+        <p
+          id="checkbox-value"
+        >
+          Checkbox Value: true
+        </p>
+      </div>
+    </div>
+  </div>
+</app-state>
+`;
