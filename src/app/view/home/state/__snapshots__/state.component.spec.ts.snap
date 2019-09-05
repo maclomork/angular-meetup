@@ -9,87 +9,58 @@ exports[`StateComponent Iterating the subjects results in correct values display
   rightButtonClicked={[Function Number]}
   stateService={[Function StateServiceMock]}
 >
-  <div
-    class="container"
+  <h3
+    class="text-center"
   >
-    <div
-      class="row"
+    Buttons Clicked State
+  </h3><div
+    class="text-center pt-2"
+  >
+    <p
+      class="d-inline-block"
+      id="left-btn-clicks"
     >
-      <div
-        class="col-12"
-      >
-        <h1>
-          Buttons Clicked State
-        </h1>
-      </div>
-      <div
-        class="col-6"
-      >
-        <p
-          id="left-btn-clicks"
-        >
-          Left Button clicked: 4
-        </p>
-      </div>
-      <div
-        class="col-6"
-      >
-        <p
-          id="right-btn-clicks"
-        >
-          Right Button clicked: 12
-        </p>
-      </div>
-    </div>
-    <div
-      class="row"
+      Left: 4
+    </p>
+    <span
+      class="text-muted d-inline-block mx-4"
     >
-      <div
-        class="col-12"
-      >
-        <h1>
-          Input Form State
-        </h1>
-      </div>
-      <div
-        class="col-12"
-      >
-        <p
-          id="form-ctrl-valid"
-        >
-          FormControl valid: true
-        </p>
-      </div>
-      <div
-        class="col-12"
-      >
-        <p
-          id="form-ctrl-value"
-        >
-          FormControl value: some text
-        </p>
-      </div>
-    </div>
-    <div
-      class="row"
+      ?
+    </span>
+    <p
+      class="d-inline-block"
+      id="right-btn-clicks"
     >
-      <div
-        class="col-12"
-      >
-        <h1>
-          Checkbox State
-        </h1>
-      </div>
-      <div
-        class="col-12"
-      >
-        <p
-          id="checkbox-value"
-        >
-          Checkbox Value: true
-        </p>
-      </div>
-    </div>
-  </div>
+      Right: 12
+    </p>
+  </div><h3
+    class="text-center"
+    style="margin-top:36px;"
+  >
+    Input Form State
+  </h3><p
+    class="text-center"
+    id="form-ctrl-valid"
+  >
+    FormControl valid: true
+  </p><p
+    class="text-center"
+    id="form-ctrl-value"
+    style="min-height:48px;"
+  >
+    FormControl value:
+    <br />
+    some text
+  </p><h3
+    class="text-center"
+    style="margin-top:38px;"
+  >
+    Checkbox State
+  </h3><p
+    class="text-center"
+    id="checkbox-value"
+  >
+    Checkbox Value: true
+  </p>
 </app-state>
 `;
