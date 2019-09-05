@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test-watch": "jest --watch",
+    "test-coverage": "jest --coverage",
     "lint": "ng lint"
   },
   "private": true,
@@ -36,6 +37,7 @@
     "codelyzer": "^5.0.0",
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.1",
+    "prettier": "1.18.2",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"

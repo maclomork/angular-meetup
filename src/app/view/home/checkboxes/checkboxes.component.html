@@ -1,12 +1,9 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>Checkbox FormControl</h1>
-    </div>
-    <div class="col-12">
-      <label>Checkbox enabled
-        <input [formControl]="checkBoxFormControl" id="checkbox" type="checkbox" value="{{checkBoxFormControl.value}}">
-      </label>
-    </div>
-  </div>
+<h3 class="text-center mt-5">Checkbox FormControl</h3>
+<div class="form-group text-center">
+    <label class="form-check-inline">
+        <input [formControl]="checkBoxFormControl" id="checkbox" class="form-check-input" type="checkbox"
+               value="{{checkBoxFormControl.value}}"/>
+        Checkbox enabled
+    </label>
 </div>
+

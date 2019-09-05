@@ -47,9 +47,9 @@ describe('StateComponent', () => {
     const rightBtnClicksElement = fixture.debugElement.nativeElement.querySelector('#right-btn-clicks');
 
     expect(component.leftButtonClicked).toBe(0);
-    expect(leftBtnClicksElement.textContent).toEqual('Left Button clicked: 0');
+    expect(leftBtnClicksElement.textContent).toEqual('Left: 0');
     expect(component.rightButtonClicked).toBe(0);
-    expect(rightBtnClicksElement.textContent).toEqual('Right Button clicked: 0');
+    expect(rightBtnClicksElement.textContent).toEqual('Right: 0');
 
     stateServiceMock.leftButtonClicksSubject.next(5);
     stateServiceMock.rightButtonClicksSubject.next(15);
@@ -57,9 +57,9 @@ describe('StateComponent', () => {
     fixture.detectChanges();
 
     expect(component.leftButtonClicked).toBe(5);
-    expect(leftBtnClicksElement.textContent).toEqual('Left Button clicked: 5');
+    expect(leftBtnClicksElement.textContent).toEqual('Left: 5');
     expect(component.rightButtonClicked).toBe(15);
-    expect(rightBtnClicksElement.textContent).toEqual('Right Button clicked: 15');
+    expect(rightBtnClicksElement.textContent).toEqual('Right: 15');
   });
 
   test('StateComponent displays the information about input form control', () => {
@@ -69,7 +69,7 @@ describe('StateComponent', () => {
     expect(component.formControlValid).toBe(false);
     expect(formCtrlValidElement.textContent).toEqual('FormControl valid: false');
     expect(component.formControlValue).toBe('');
-    expect(formCtrlValueElement.textContent).toEqual('FormControl value: ');
+    expect(formCtrlValueElement.textContent).toEqual('FormControl value:');
 
     stateServiceMock.formControlValidSubject.next(true);
     stateServiceMock.formControlValueSubject.next('some text');
@@ -79,7 +79,7 @@ describe('StateComponent', () => {
     expect(component.formControlValid).toBe(true);
     expect(formCtrlValidElement.textContent).toEqual('FormControl valid: true');
     expect(component.formControlValue).toBe('some text');
-    expect(formCtrlValueElement.textContent).toEqual('FormControl value: some text');
+    expect(formCtrlValueElement.textContent).toEqual('FormControl value:some text');
   });
 
   test('StateComponent displays the checkbox form control value', () => {
